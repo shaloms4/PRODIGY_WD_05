@@ -8,22 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-section">
-            <div id="temp-div" class="temp-div"></div>
-            <div id="weather-description" class="weather-description"></div>
-        </div>
-        <div class="right-section">
-            <div class="weather-form-container">
-                <form id="weather-form" class="weather-form">
-                    <input type="text" id="city" placeholder="Enter city..." required>
-                    <button type="submit">Get Weather</button>
-                </form>
-            </div>
-            <div class="header">
-                <h1>Weather Details</h1>
-            </div>
-            <div id="hourly-forecast" class="hourly-forecast"></div>
-        </div>
+        <h1>Weather App</h1>
+        <div id="location-info"></div>
+    </div>
+    <div class="form-container">
+        <form id="city-form">
+            <label for="city-input">Enter a City:</label>
+            <input type="text" id="city-input" placeholder="e.g., New York, USA">
+            <button type="submit">Get Weather</button>
+        </form>
+        <hr>
+        <div id="weather-info"></div>
     </div>
     <script src="script.js"></script>
 </body>
