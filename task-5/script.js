@@ -1,4 +1,3 @@
-// Event listener for Enter key press in the city input field
 document.getElementById('city-input').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -6,14 +5,12 @@ document.getElementById('city-input').addEventListener('keypress', function(even
     }
 });
 
-// Event listener for click on the search button
 document.getElementById('search-button').addEventListener('click', function() {
     getWeather(document.getElementById('city-input').value);
 });
 
-// Fetch weather data from the OpenWeatherMap API
 function getWeather(city) {
-    const apiKey = 'd0a212324f2eda2d3bc9b874b1baeef0';  // Your actual API key
+    const apiKey = 'd0a212324f2eda2d3bc9b874b1baeef0'; 
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(currentWeatherUrl)
@@ -25,18 +22,17 @@ function getWeather(city) {
         })
         .then(data => {
             if (data.cod !== 200) {
-                throw new Error(data.message);  // Throw error for invalid responses
+                throw new Error(data.message); 
             }
             displayWeather(data);
-            updateCityList(city);  // Add the city to the list
+            updateCityList(city);  
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
-            document.getElementById('weather-details').innerHTML = `<p>Error: ${error.message}</p>`;  // Show error message
+            document.getElementById('weather-details').innerHTML = `<p>Error: ${error.message}</p>`;  
         });
 }
 
-// Display weather information on the page
 function displayWeather(data) {
     const location = `${data.name}, ${data.sys.country}`;
     const description = data.weather[0].description;
@@ -55,7 +51,6 @@ function displayWeather(data) {
     document.getElementById('wind-speed-detail').innerText = windSpeed;
 }
 
-// Update the city list with recent searches
 function updateCityList(city) {
     const cityList = document.querySelector('.city-list');
     if (![...cityList.children].some(li => li.textContent === city)) {
@@ -65,7 +60,6 @@ function updateCityList(city) {
     }
 }
 
-// Add event listeners to city list items for weather updates
 document.querySelector('.city-list').addEventListener('click', function(event) {
     if (event.target.tagName === 'LI') {
         getWeather(event.target.textContent);
