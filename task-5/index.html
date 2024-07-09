@@ -8,17 +8,35 @@
 </head>
 <body>
     <div class="container">
-        <h1>Weather App</h1>
-        <div id="location-info"></div>
+        <h1 id="app-title">the.weather</h1>
+        <div id="weather-display">
+            <h1 id="temperature">08°</h1>
+            <div id="location-description">
+                <h2 id="location">London</h2>
+                <p id="date">Sunday, 8 Oct '19</p>
+                <p id="weather-description">Rainy</p>
+            </div>
+        </div>
     </div>
     <div class="form-container">
-        <form id="city-form">
-            <label for="city-input">Enter a City:</label>
-            <input type="text" id="city-input" placeholder="e.g., New York, USA">
-            <button type="submit">Get Weather</button>
-        </form>
+        <div class="search-bar">
+            <input type="text" id="city-input" placeholder="Enter a location">
+            <button id="search-button">
+                <img src="search-icon.png" alt="Search Icon">
+            </button>
+        </div>
+        <ul class="city-list">
+            <li>Ethiopia</li>
+            <li>India</li>
+            <li>London</li>
+        </ul>
         <hr>
-        <div id="weather-info"></div>
+        <div id="weather-details">
+            <h2>Weather Details</h2>
+            <p>Temperature: <span id="temperature-detail"></span>°C</p>
+            <p>Humidity: <span id="humidity-detail"></span>%</p>
+            <p>Wind Speed: <span id="wind-speed-detail"></span>m/s</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
