@@ -56,27 +56,44 @@ function displayWeather(data) {
     const iconClass = weatherIcons[description] || 'fa-cloud';
 
     document.getElementById('location').innerText = location;
-    document.getElementById('date').innerText = date;
+    document.getElementById('date').innerText = date; 
     document.getElementById('weather-description').innerText = description;
-    document.getElementById('temperature').innerText = `${temperature}°`;
-    document.getElementById('weather-icon').className = `fa ${iconClass}`; 
+    document.getElementById('temperature').innerText = `${temperature}°c`;
+    document.getElementById('humidity-detail').innerText = `${humidity}`;
+    document.getElementById('wind-speed-detail').innerText = `${windSpeed}`;
+    document.getElementById('weather-icon').className = `fa ${iconClass}`;
 
-    document.getElementById('temperature-detail').innerText = temperature;
+    document.getElementById('temperature-detail').innerText = temperature; 
     document.getElementById('humidity-detail').innerText = humidity;
     document.getElementById('wind-speed-detail').innerText = windSpeed;
 }
 
+document.querySelectorAll('.city-list li').forEach(item => {
+    item.addEventListener('click', () => {
+        getWeather(item.textContent);
+    });
+});
+
 function updateCityList(city) {
     const cityList = document.querySelector('.city-list');
-    if (![...cityList.children].some(li => li.textContent === city)) {
-        const li = document.createElement('li');
-        li.textContent = city;
-        cityList.appendChild(li);
+    const cityItems = Array.from(cityList.querySelectorAll('li')).map(item => item.textContent);
+
+    if (!cityItems.includes(city)) {
+        const newCityItem = document.createElement('li');
+        newCityItem.textContent = city;
+        newCityItem.addEventListener('click', () => {
+            getWeather(city);
+        });
+
+        cityList.appendChild(newCityItem);
     }
 }
 
-document.querySelector('.city-list').addEventListener('click', function(event) {
-    if (event.target.tagName === 'LI') {
-        getWeather(event.target.textContent);
-    }
-});
+function setCurrentDate() {
+    const date = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: '2-digit' });
+    document.getElementById('date').innerText = date;
+}
+
+window.onload = function() {
+    setCurrentDate();
+};
