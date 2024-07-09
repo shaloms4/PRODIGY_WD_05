@@ -10,6 +10,7 @@ body {
     justify-content: flex-end;
     height: 100vh;
     position: relative;
+    transition: background-image 0.5s ease-in-out; 
 }
 
 .container {
