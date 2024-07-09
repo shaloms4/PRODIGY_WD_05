@@ -23,9 +23,9 @@ body {
 
 #app-title {
     font-size: 24px;
-    position: absolute; /* Changed to absolute positioning */
-    top: 20px; /* Distance from the top */
-    left: 80px; /* Distance from the left */
+    position: absolute;
+    top: 20px;
+    left: 80px;
 }
 
 #weather-display {
@@ -41,7 +41,7 @@ body {
 #location-description {
     margin-left: 20px;
     display: flex;
-    flex-direction: column; /* Stack location and date vertically */
+    flex-direction: column;
 }
 
 #location {
@@ -67,7 +67,8 @@ body {
 
 .form-container {
     width: 30%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.639);
+    backdrop-filter: blur(10px);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -78,7 +79,7 @@ body {
     top: 0;
     right: 0;
     height: 100%;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box;
 }
 
 .search-bar {
@@ -86,9 +87,9 @@ body {
     width: 100%;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #fff; /* White background for the search bar */
+    background-color: #fff;
     border-radius: 4px;
-    overflow: hidden; /* Ensure the search icon is contained within the search bar */
+    overflow: hidden;
     margin-top: 20px;
 }
 
@@ -97,14 +98,14 @@ body {
     padding: 10px;
     font-size: 16px;
     border: none;
-    color: #333; /* Dark text color for input */
-    background-color: #fff; /* White background for the input field */
+    color: #333;
+    background-color: #fff;
 }
 
 .search-bar button {
     width: 40px;
     height: 40px;
-    background-color: #555151; /* Dark background for the search icon */
+    background-color: #555151;
     border: none;
     cursor: pointer;
     display: flex;
@@ -114,7 +115,7 @@ body {
 
 .search-bar i {
     font-size: 16px;  
-    color: #fff; /* White icon color */
+    color: #fff;
 }
 
 .city-list {
@@ -128,7 +129,9 @@ body {
 
 .city-list li {
     padding: 10px 0;
-    border-bottom: none; /* Remove the border */
+    border-bottom: none;
+    cursor: pointer;
+    color: rgb(203, 189, 189);
 }
 
 hr {
@@ -139,7 +142,7 @@ hr {
 
 #weather-details {
     width: 100%;
-    margin-top: 20px; /* Add space between hr and weather details */
+    margin-top: 20px;
 }
 
 #weather-details h2 {
@@ -149,23 +152,25 @@ hr {
 
 #weather-details .detail {
     display: flex;
-    justify-content: space-between; /* Space between name and value */
-    padding: 10px 0; /* Add padding for spacing */
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
 #weather-details .detail:last-child {
-    border-bottom: none; /* Remove the border from the last item */
+    border-bottom: none;
 }
 
 #weather-details .detail .name {
-    font-weight: bold; /* Make the name bold */
+    color: rgb(203, 189, 189);
 }
 
 #weather-details .detail .value {
     display: flex;
     align-items: center;
+    color: rgb(203, 189, 189);
 }
 
 #weather-details .detail .unit {
-    margin-left: 5px; /* Adjust space between the value and the unit */
+    margin-left: 5px;
+    color: rgb(203, 189, 189);
 }
