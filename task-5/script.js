@@ -34,7 +34,7 @@ function getWeather(city) {
 }
 
 function displayWeather(data) {
-    const location = `${data.name}, ${data.sys.country}`;
+    const location = `${data.name}`;
     const description = data.weather[0].description;
     const temperature = data.main.temp;
     const humidity = data.main.humidity;
