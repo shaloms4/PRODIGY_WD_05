@@ -57,12 +57,19 @@ body {
 #weather-condition {
     margin-left: 20px;
     display: flex;
+    flex-direction: column; /* Change to column layout */
     align-items: center;
 }
 
 #weather-icon {
     font-size: 48px;
-    margin-right: 10px;
+    margin-bottom: 10px; /* Space between icon and description */
+}
+
+#weather-description-container {
+    display: flex;
+    flex-direction: column; /* Ensures description is below the icon */
+    align-items: center;
 }
 
 #weather-description {
@@ -141,44 +148,29 @@ body {
     color: rgb(203, 189, 189);
 }
 
-
 hr {
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
     margin: 20px 0;
+    width: 100%;
 }
 
 #weather-details {
     width: 100%;
-    margin-top: 20px;
 }
 
-#weather-details h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-#weather-details .detail {
+.detail {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 10px 0;
+    color: rgb(203, 189, 189)
 }
 
-#weather-details .detail:last-child {
-    border-bottom: none;
+.value {
+    font-size: 18px;
 }
 
-#weather-details .detail .name {
-    color: rgb(203, 189, 189);
-}
-
-#weather-details .detail .value {
-    display: flex;
-    align-items: center;
-    color: rgb(203, 189, 189);
-}
-
-#weather-details .detail .unit {
-    margin-left: 5px;
-    color: rgb(203, 189, 189);
+.unit {
+    font-size: 14px;
 }
