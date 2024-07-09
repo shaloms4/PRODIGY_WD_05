@@ -41,10 +41,25 @@ function displayWeather(data) {
     const windSpeed = data.wind.speed;
     const date = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: '2-digit' });
 
+    const weatherIcons = {
+        'clear sky': 'fa-sun',
+        'few clouds': 'fa-cloud-sun',
+        'scattered clouds': 'fa-cloud',
+        'broken clouds': 'fa-cloud-meatball',
+        'shower rain': 'fa-cloud-showers-heavy',
+        'rain': 'fa-cloud-showers-water',
+        'thunderstorm': 'fa-bolt',
+        'snow': 'fa-snowflake',
+        'mist': 'fa-smog',
+    };
+
+    const iconClass = weatherIcons[description] || 'fa-cloud';
+
     document.getElementById('location').innerText = location;
     document.getElementById('date').innerText = date;
     document.getElementById('weather-description').innerText = description;
     document.getElementById('temperature').innerText = `${temperature}°`;
+    document.getElementById('weather-icon').className = `fa ${iconClass}`; 
 
     document.getElementById('temperature-detail').innerText = temperature;
     document.getElementById('humidity-detail').innerText = humidity;

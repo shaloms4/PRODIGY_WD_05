@@ -60,6 +60,11 @@ body {
     align-items: center;
 }
 
+#weather-icon {
+    font-size: 48px;
+    margin-right: 10px;
+}
+
 #weather-description {
     font-size: 24px;
     margin: 0;
@@ -125,6 +130,8 @@ body {
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
+    overflow-y: auto; 
+    max-height: 200px; 
 }
 
 .city-list li {
@@ -133,6 +140,7 @@ body {
     cursor: pointer;
     color: rgb(203, 189, 189);
 }
+
 
 hr {
     width: 100%;
