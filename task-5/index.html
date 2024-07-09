@@ -36,9 +36,18 @@
         <hr>
         <div id="weather-details">
             <h2>Weather Details</h2>
-            <p>Temperature: <span id="temperature-detail"></span>°C</p>
-            <p>Humidity: <span id="humidity-detail"></span>%</p>
-            <p>Wind Speed: <span id="wind-speed-detail"></span>m/s</p>
+            <div class="detail">
+                <span class="name">Temperature</span>
+                <span class="value"><span id="temperature-detail"></span><span class="unit">°C</span></span>
+            </div>
+            <div class="detail">
+                <span class="name">Humidity</span>
+                <span class="value"><span id="humidity-detail"></span><span class="unit">%</span></span>
+            </div>
+            <div class="detail">
+                <span class="name">Wind Speed</span>
+                <span class="value"><span id="wind-speed-detail"></span><span class="unit">m/s</span></span>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

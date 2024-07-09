@@ -66,7 +66,7 @@ body {
 }
 
 .form-container {
-    width: 40%;
+    width: 30%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     display: flex;
@@ -147,10 +147,25 @@ hr {
     margin-bottom: 10px;
 }
 
-#weather-details p {
-    margin: 10px 0; /* Add margin for spacing */
+#weather-details .detail {
+    display: flex;
+    justify-content: space-between; /* Space between name and value */
     padding: 10px 0; /* Add padding for spacing */
-    
-    width: 100%;
-    text-align: left;
+}
+
+#weather-details .detail:last-child {
+    border-bottom: none; /* Remove the border from the last item */
+}
+
+#weather-details .detail .name {
+    font-weight: bold; /* Make the name bold */
+}
+
+#weather-details .detail .value {
+    display: flex;
+    align-items: center;
+}
+
+#weather-details .detail .unit {
+    margin-left: 5px; /* Adjust space between the value and the unit */
 }
