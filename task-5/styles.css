@@ -128,7 +128,7 @@ body {
 }
 
 .city-list li {
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: none;
     cursor: pointer;
     color: rgb(203, 189, 189);
@@ -153,7 +153,7 @@ hr {
 #weather-details .detail {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 #weather-details .detail:last-child {
